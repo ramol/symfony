@@ -124,10 +124,11 @@ abstract class AbstractAuthenticationListener implements ListenerInterface
         }
 
         try {
+            /* RAMOL FIX login without cookie
             if (!$request->hasPreviousSession()) {
                 throw new SessionUnavailableException('Your session has timed out, or you have disabled cookies.');
             }
-
+            */
             if (null === $returnValue = $this->attemptAuthentication($request)) {
                 return;
             }
